@@ -1,0 +1,10 @@
+Create Next App
+
+##install next
+    - npx create-next-app .
+
+##install tailwindcss https://tailwindcss.com/docs/installation
+    - npm install -D tailwindcss postcss autoprefixer
+    - npx tailwindcss init
+    - config .tailwind.config
+    - config .style/globals
