@@ -28,3 +28,21 @@ a {
     background: black;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+}
+
+.card {
+  @apply mb-5 block rounded-lg border border-gray-200 shadow-md
+}
+
+.primary-button {
+  @apply rounded bg-amber-400 py-2 px-4 shadow outline-none hover:bg-amber-500 active:bg-amber-600
+}

@@ -1,9 +1,21 @@
 import Layout from '../components/Layout';
+import ProductItem from '../components/ProductItem';
+import data from '../utils/data';
 
 export default function Home() {
   return (
-    <Layout>
-      <h1 className="text-3xl font-bold">NextShop</h1>
+    <Layout
+      title="shop by next js"
+      description="shop by next js shop by next js"
+    >
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {data.products.map((product) => (
+          <ProductItem product={product} key={product.slug}>
+            {' // เรียกใช้ ProductItem componnect ส่ง product ไป'}
+          </ProductItem>
+        ))}
+      </div>
     </Layout>
   );
 }
+``;
