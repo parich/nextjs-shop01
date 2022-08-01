@@ -29,16 +29,6 @@ a {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: black;
-    background: white;
-  }
-}
-
 .card {
   @apply mb-5 block rounded-lg border border-gray-200 shadow-md
 }
