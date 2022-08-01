@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
+import dynamic from 'next/dynamic';
+//import DarkMode from './DarkMode';
+const DarkMode = dynamic(() => import('./DarkMode'), { ssr: false });
 
 export default function Layout({ children, title, description }) {
   return (
@@ -23,6 +26,7 @@ export default function Layout({ children, title, description }) {
               <Link href="/cart">
                 <a className="p-2">Logout</a>
               </Link>
+              <DarkMode className="p-2" />
             </div>
           </nav>
         </header>
