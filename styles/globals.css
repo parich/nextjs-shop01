@@ -19,6 +19,7 @@ a {
   box-sizing: border-box;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -28,9 +29,10 @@ a {
     background: black;
   }
 }
+*/
 
 .card {
-  @apply mb-5 block rounded-lg border border-gray-200 shadow-md
+  @apply mb-5  block   rounded-lg border border-gray-200  shadow-md;
 }
 
 .primary-button {
