@@ -9,6 +9,7 @@ import React, { useContext } from 'react';
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
 
+  const router = useRouter();
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
@@ -39,6 +40,7 @@ export default function ProductScreen() {
       return;
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
+    router.push('/cart');
   };
 
   return (
