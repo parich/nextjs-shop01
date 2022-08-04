@@ -42,3 +42,7 @@
 - use context to get cart items
 - list items in cart items
 - redirect to cart screen after add to cart
+
+## Update Quanity In The Cart
+- add select box for quantity
+- handle select box change

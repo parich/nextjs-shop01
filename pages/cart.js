@@ -14,10 +14,17 @@ export default function CartScreen() {
     cart: { cartItems },
   } = state;
 
-  console.log(cartItems);
+  //console.log(cartItems);
+  console.log('111111' + JSON.stringify(cartItems, null, 2));
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+  };
+
+  const updateCartHandler = (item, qty) => {
+    //console.log('item......' + JSON.stringify(item, null, 2));
+    const quantity = Number(qty);
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
   };
 
   return (
@@ -42,6 +49,7 @@ export default function CartScreen() {
                   <th className="px-5 text-left">Item</th>
                   <th className="p-5 text-right">Quantity</th>
                   <th className="p-5 text-right">Price</th>
+                  <th className="p-5 text-right">Sum</th>
                   <th className="p-5 ">Action</th>
                 </tr>
               </thead>
@@ -62,8 +70,24 @@ export default function CartScreen() {
                         </a>
                       </Link>
                     </td>
-                    <td className="p-5 text-right">{item.quantity}</td>
+                    <td className="p-5 text-right">
+                      <select
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateCartHandler(item, e.target.value)
+                        }
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
                     <td className="p-5 text-right">{item.price}</td>
+                    <td className="p-5 text-right">
+                      {item.quantity * item.price}
+                    </td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
                         <XCircleIcon className="h-5 w-5"></XCircleIcon>
