@@ -10,6 +10,8 @@ export default function Layout({ children, title, description }) {
   const { state } = useContext(Store);
   const { cart } = state;
 
+  console.log(cart);
+
   return (
     <>
       <Head>

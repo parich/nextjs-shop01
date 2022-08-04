@@ -36,3 +36,9 @@
 - add reducer
 - create store provider
 - handle add to cart button
+
+## Create Cart Page
+- create cart.js
+- use context to get cart items
+- list items in cart items
+- redirect to cart screen after add to cart

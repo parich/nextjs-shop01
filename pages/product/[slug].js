@@ -13,6 +13,8 @@ export default function ProductScreen() {
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
 
+  console.log(product);
+
   if (!product) {
     return (
       <Layout title="Product not found" description="Product not found">
