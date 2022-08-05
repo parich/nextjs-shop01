@@ -5,8 +5,9 @@ import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
 import { XCircleIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
-export default function CartScreen() {
+function CartScreen() {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
 
@@ -15,7 +16,7 @@ export default function CartScreen() {
   } = state;
 
   //console.log(cartItems);
-  console.log('111111' + JSON.stringify(cartItems, null, 2));
+  console.log(JSON.stringify(cartItems, null, 2));
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
@@ -121,3 +122,5 @@ export default function CartScreen() {
     </Layout>
   );
 }
+
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });

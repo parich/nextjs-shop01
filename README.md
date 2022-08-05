@@ -46,3 +46,8 @@
 ## Update Quanity In The Cart
 - add select box for quantity
 - handle select box change
+
+## Save Cart Items
+- install js-cookie package
+- save and retreive cart items in cookies
+- dynamic render
