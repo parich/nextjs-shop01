@@ -38,16 +38,25 @@
 - handle add to cart button
 
 ## Create Cart Page
+
 - create cart.js
 - use context to get cart items
 - list items in cart items
 - redirect to cart screen after add to cart
 
 ## Update Quanity In The Cart
+
 - add select box for quantity
 - handle select box change
 
 ## Save Cart Items
+
 - install js-cookie package
 - save and retreive cart items in cookies
 - dynamic render
+
+## Create Login Form
+
+- install react hook form
+- create input boxes
+- add login button
