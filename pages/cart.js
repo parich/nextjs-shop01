@@ -16,14 +16,14 @@ function CartScreen() {
   } = state;
 
   //console.log(cartItems);
-  console.log(JSON.stringify(cartItems, null, 2));
+  //console.log(JSON.stringify(cartItems, null, 2));
 
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
 
   const updateCartHandler = (item, qty) => {
-    //console.log('item......' + JSON.stringify(item, null, 2));
+    //console.log(JSON.stringify(item, null, 2));
     const quantity = Number(qty);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
   };

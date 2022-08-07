@@ -1,12 +1,19 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
 import { Store } from '../utils/Store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import dynamic from 'next/dynamic';
 //import DarkMode from './DarkMode';
 const DarkMode = dynamic(() => import('./DarkMode'), { ssr: false });
 
 export default function Layout({ children, title, description }) {
+  const { status, data: session } = useSession();
+  console.log(session);
+  console.log(status);
+
   const { state } = useContext(Store);
   const { cart } = state;
 
@@ -23,6 +30,9 @@ export default function Layout({ children, title, description }) {
         {description && <meta content={description} name="description"></meta>}
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <ToastContainer position="bottom-center" limit={1} />
+
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
@@ -40,9 +50,15 @@ export default function Layout({ children, title, description }) {
                   )}
                 </a>
               </Link>
-              <Link href="/cart">
-                <a className="p-2">Logout</a>
-              </Link>
+              {status === 'loading' ? (
+                'Loading'
+              ) : session?.user ? (
+                session.user.name
+              ) : (
+                <Link href="/login">
+                  <a className="p-2">Login</a>
+                </Link>
+              )}
               <DarkMode className="p-2" />
             </div>
           </nav>
