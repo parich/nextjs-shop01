@@ -1,18 +1,40 @@
 import '../styles/globals.css';
 import { ThemeProvider } from 'next-themes';
 import { StoreProvider } from '../utils/Store';
-import { SessionProvider } from 'next-auth/react';
+import { SessionProvider, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <ThemeProvider attribute="class">
       <SessionProvider session={session}>
         <StoreProvider>
-          <Component {...pageProps} />
+          {Component.auth ? (
+            <Auth>
+              <Component {...pageProps} />
+            </Auth>
+          ) : (
+            <Component {...pageProps} />
+          )}
         </StoreProvider>
       </SessionProvider>
     </ThemeProvider>
   );
+}
+
+function Auth({ children }) {
+  const router = useRouter();
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/unauthorized?message=login required');
+    },
+  });
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  return children;
 }
 
 export default MyApp;
