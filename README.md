@@ -28,6 +28,10 @@
 - show add to cart action on third column
 - add styles
 
+## Create Payment Method Screen
+- dispaly payment methods
+- save payment method in context
+
 ## Handle Add To Cart
 
 - define react context
