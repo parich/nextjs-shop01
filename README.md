@@ -29,6 +29,7 @@
 - add styles
 
 ## Create Payment Method Screen
+
 - dispaly payment methods
 - save payment method in context
 
@@ -74,16 +75,25 @@
 - create sample users
 
 ## Create Login API
+
 - install next-auth
 - create nextauth.js
 - implement signin
 - use signin in login form
 
 ## Add User Menu
+
 - check user authentication
 - install headlessui
 - show user menu
 
 ## Create Shipping Screen
-  - display address fields
-  - save address in context
+
+- display address fields
+- save address in context
+
+## Seed sample products
+
+- insert sample products to mongodb
+- load products from db in home and product screen
+- check product count in stock in add to cart
