@@ -101,3 +101,9 @@
   - load products in product page from mongodb
   - use product api to check count in stock in add to cart
 
+## Create Place Order Screen
+- display shipping address
+- display payment method
+- display order items
+- implment create order
+

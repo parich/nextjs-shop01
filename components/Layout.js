@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Menu } from '@headlessui/react';
 import dynamic from 'next/dynamic';
 import DropdownLink from './DropdownLink';
+import { ChevronDownIcon, ShoppingCartIcon } from '@heroicons/react/solid';
 import Cookies from 'js-cookie';
 //import DarkMode from './DarkMode';
 const DarkMode = dynamic(() => import('./DarkMode'), { ssr: false });
@@ -51,7 +52,7 @@ export default function Layout({ children, title, description }) {
             <div>
               <Link href="/cart">
                 <a className="p-2">
-                  Cart
+                  <ShoppingCartIcon className="inline ml-2 -mr-1 h-5 w-5" />
                   {cartItemCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
                       {cartItemCount}
@@ -65,6 +66,10 @@ export default function Layout({ children, title, description }) {
                 <Menu as="div" className="relative inline-block z-50">
                   <Menu.Button className="text-blue-600 dark:text-amber-600">
                     {session.user.name}
+                    <ChevronDownIcon
+                      className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100 inline"
+                      aria-hidden="true"
+                    />
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
                     <Menu.Item>
