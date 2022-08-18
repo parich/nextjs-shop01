@@ -93,21 +93,31 @@
 - save address in context
 
 ## Seed sample products
+
 - create product model in mongoose
 - insert sample products to mongodb
 
 ## Load Products MongoDB
-  - load products in home page from mongodb
-  - load products in product page from mongodb
-  - use product api to check count in stock in add to cart
+
+- load products in home page from mongodb
+- load products in product page from mongodb
+- use product api to check count in stock in add to cart
 
 ## Create Place Order Screen
+
 - display shipping address
 - display payment method
 - display order items
 - implment create order
 
 ## Create Order Screen
+
 - implement backend api for order details
 - load order data from backend
 - display order details
+
+## Create Register Screen
+
+- add signup api
+- create register page
+- call api on form submit
