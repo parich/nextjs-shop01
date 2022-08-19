@@ -1,3 +1,4 @@
+import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -157,6 +158,11 @@ function OrderScreen() {
                     <div>${totalPrice}</div>
                   </div>
                 </li>
+                {!isPaid && (
+                  <li>
+
+                </li>
+                )}
               </ul>
             </div>
           </div>
