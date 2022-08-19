@@ -121,3 +121,9 @@
 - add signup api
 - create register page
 - call api on form submit
+
+## Pay Order By PayPal
+- add paypal button
+- handle payment
+- create backend api
+- update order state
